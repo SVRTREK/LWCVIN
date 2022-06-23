@@ -1,0 +1,8 @@
+<aura:component>
+
+<div  Style='color : green'> Chaitra</div>
+
+Loves 
+<div Style='color : green'> Vinod </div>
+
+</aura:component>	

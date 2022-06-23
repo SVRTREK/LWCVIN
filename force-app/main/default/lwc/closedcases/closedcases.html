@@ -1,0 +1,49 @@
+
+<template>
+    <div class="slds-box slds-p-around_small" style="background-color:rgb(102 255 187);">
+        <lightning-input label="Enter Case Number"
+                        placeholder="Case Number"
+                        value={searchCaseNumber}
+                        onchange={caseNumberChange}>
+        </lightning-input>
+        <lightning-button label="Search" onclick={searchRecords}></lightning-button>
+
+
+        <template if:true={cases.data}>
+            <div class="slds-grid slds-wrap sds-gutters">
+                <template for:each={cases.data} for:item="eachCase">
+                    <div class="slds-col slds-size_1-of-3 slds-p-around_small" key={eachCase.Id}>
+                        <lightning-card title={eachCase.CaseNumber} key={eachCase.Id}>
+                            <div slot="actions">
+                                <template if:true={eachCase.IsClosed}>
+                                    <span style="color: green;font-weight: bold;">Already Closed</span>
+                                </template>
+                                <template if:false={eachCase.IsClosed}>
+                                    <lightning-button variant="success" 
+                                                        name={eachCase.Id}
+                                                        value={eachCase.Id}
+                                                        label="Close Case"
+                                                        onclick={passCaseToClose}
+                                    ></lightning-button>
+ 
+                                </template>
+                            </div>
+                            <p class="slds-p-horizontal_small">
+                              <span style="color: green;">Description:</span>{eachCase.Description}  
+                            </p>
+                            <p class="slds-p-horizontal_small">
+                                <span style="color: green;">Status:</span>{eachCase.Status}  
+                              </p>
+                              <p class="slds-p-horizontal_small">
+                                <span style="color: green;">Priority:</span>{eachCase.Priority}  
+                              </p>
+                              <p style="color: green;" slot="footer">
+                                {eachCase.Subject}
+                              </p>
+                        </lightning-card>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </div>    
+</template>
