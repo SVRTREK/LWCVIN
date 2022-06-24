@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="How to upload file & attaching in Lightning Web Component -- LWC" icon-name="custom:custom18" size="small">
+        <div class="slds-p-around_medium">
+            <lightning-file-upload
+            label="Attach File"
+            name="fileUploader"
+            accept={acceptedFileItem}
+            record-id={myRecordId}
+            onuploadfinished={uploadFiledAction}
+            multiple>
+    </lightning-file-upload>
+        </div>
+</lightning-card>
+</template>
