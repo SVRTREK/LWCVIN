@@ -1,0 +1,24 @@
+<template>
+    <lightning-card>
+        
+        <h3 slot="title">
+            <lightning-icon icon-name="utility:connected_apps" size="small"></lightning-icon> Pass the multiple values from parent component to child component in LWC       
+        </h3>           
+         <div class="slds slds-p-horizontal--medium">
+            <lightning-icon icon-name="utility:down" size="x-small"> </lightning-icon> <span style="color:#ff0000; display:inline-block; margin-left:5px;">Parent Component</span>    
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_6-of-12 slds-p-horizontal--medium slds-m-bottom--small"><lightning-input type="text" label="User Name" class="userName"></lightning-input></div>
+                <div class="slds-col slds-size_6-of-12 slds-p-horizontal--medium slds-m-bottom--small"><lightning-input type="text" label="Email" class="userEmail"></lightning-input></div>
+                <div class="slds-col slds-size_6-of-12 slds-p-horizontal--medium slds-m-bottom--small"><lightning-input type="text" label="Phone" class="userPhone"></lightning-input></div>
+                <div class="slds-col slds-size_6-of-12 slds-p-horizontal--medium slds-m-bottom--small"><lightning-input type="text" label="Address" class="userAddress"></lightning-input></div>
+                <div class="slds-col slds-size_12-of-12 slds-p-horizontal--medium slds-text-align--center" >
+                    <lightning-button label="Action Method" variant="brand" size="small" onclick={handleAction}></lightning-button>
+                </div>
+            </div>
+ 
+            <lightning-icon icon-name="utility:down" size="x-small"></lightning-icon> <span style="color:#ff0000; display:inline-block; margin-left:5px;">Child Component</span>    
+            <c-LWC-Slave></c-LWC-Slave>
+        </div>
+    </lightning-card>
+    </template>
+ 
